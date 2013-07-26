@@ -4,33 +4,37 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Simple icons</title>
+
     <link href="default.css" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
     function initialize() {
       var mapOptions = {
         zoom: 2,
-        center: new google.maps.LatLng(-33, 151),
+        center: new google.maps.LatLng(35, 139),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       var map = new google.maps.Map(document.getElementById('map-canvas'),
                                     mapOptions);
 
       var image = 'marker.png';
-      var myLatLng = new google.maps.LatLng(40.890542, 60.274856);
+      var myLatLng = new google.maps.LatLng( 37.774929, -122.419416);
       var beachMarker = new google.maps.Marker({
           position: myLatLng,
-          map: map,
-          icon: image
+          map: map
       });
 
 
-      var myLatLng2 = new google.maps.LatLng(-33.890542, 151.274856);
+      var myLatLng2 = new google.maps.LatLng(37.441883, -122.143019);
       var beachMarker2 = new google.maps.Marker({
           position: myLatLng2,
-          map: map,
-          icon: image
+          map: map
       });
+
+      var latBounds = new google.maps.LatLngBounds();
+      latBounds.extend(myLatLng);
+      latBounds.extend(myLatLng2);
+      map.fitBounds(latBounds);
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
