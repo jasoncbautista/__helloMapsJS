@@ -29,3 +29,22 @@ html, body {
   padding: 5px;
   border: 1px solid #999;
 }
+
+
+
+.leftBar{
+  background: orange;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 30%;
+  bottom: 0px;
+}
+
+.leftBar ul li{
+  cursor: pointer;
+}
+
+.leftBar ul li:hover{
+  color: gray;
+}
