@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple icons</title>
+
+    <link href="default.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+    function initialize() {
+      var mapOptions = {
+        zoom: 6,
+        center: new google.maps.LatLng(35, 139),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(document.getElementById('map-canvas'),
+                                    mapOptions);
+
+      var image = 'marker.png';
+      var myLatLng = new google.maps.LatLng( 37.774929, -122.419416);
+      var beachMarker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          icon: "chrome.png"
+      });
+
+
+
+
+
+      var myLatLng2 = new google.maps.LatLng(37.441883, -122.143019);
+      var beachMarker2 = new google.maps.Marker({
+          position: myLatLng2,
+          map: map,
+          icon: "iphone.png"
+      });
+
+      var myLatLng3 = new google.maps.LatLng(40.714353 , -74.005973);
+      var beachMarker3 = new google.maps.Marker({
+          position: myLatLng3,
+          map: map
+      });
+
+      var myLatLng4  = new google.maps.LatLng( 37.485215, -122.236355);
+      var beachMarker4 = new google.maps.Marker({
+          position: myLatLng4,
+          map: map
+      });
+
+
+
+      var makeMarkerCenterInit = function(marker){
+        google.maps.event.addListener(marker, 'click', function() {
+          map.setZoom(15);
+          map.setCenter(marker.getPosition());
+        });
+      };
+      makeMarkerCenterInit(beachMarker4);
+      makeMarkerCenterInit(beachMarker3);
+      makeMarkerCenterInit(beachMarker2);
+      makeMarkerCenterInit(beachMarker);
+
+
+      var latBounds = new google.maps.LatLngBounds();
+      latBounds.extend(myLatLng);
+      latBounds.extend(myLatLng2);
+      //latBounds.extend(myLatLng3);
+      latBounds.extend(myLatLng4);
+      map.fitBounds(latBounds);
+
+      var zoomOut = function(){
+        map.fitBounds(latBounds);
+      };
+
+
+       document.getElementById("zoomOut").onclick = zoomOut;
+
+      var makeIntoClickableElement = function(elId, marker){
+        // Setup basic click events:
+        var first =
+        document.getElementById(elId);
+          first.onclick = function(){
+          map.setZoom(15);
+          map.setCenter(marker.getPosition());
+        };
+      }
+
+      makeIntoClickableElement("first", beachMarker);
+      makeIntoClickableElement("second", beachMarker2);
+      makeIntoClickableElement("third", beachMarker3);
+      makeIntoClickableElement("fourth", beachMarker4);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+
+    <div class="leftBar">
+
+      <ul>
+        <li id="first">First</li>
+        <li id="second">Second</li>
+        <li id="third">Third</li>
+        <li id="fourth">Fourth</li>
+        <li id="zoomOut"> Zoom Out </li>
+      <ul>
+    </div>
+  </body>
+</html>
