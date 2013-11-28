@@ -58,7 +58,6 @@
           , name: "STEVE BLAKE"
           , lat: 36
           , lon: -120
-
       });
 
       players.push( {
@@ -66,18 +65,13 @@
           , name: "Kobe Bryant"
           , lat: 35
           , lon: -80
-
-
       });
 
       players.push( {
           imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/35d66118-4fc5-438d-b730-ab5e74aa31be.filename"
           , name: "XAVIER HENRY"
-          , lat: 40
+          , lat: 0
           , lon: -90
-
-
-
       });
 
       /*
