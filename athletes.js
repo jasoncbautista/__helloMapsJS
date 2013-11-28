@@ -1,0 +1,96 @@
+    function initialize() {
+      var mapOptions = {
+        zoom: 6,
+        center: new google.maps.LatLng(35, 139),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+      // Initializing map objects:
+      var map = new google.maps.Map(document.getElementById('map-canvas'),
+                                    mapOptions);
+      var latBounds = new google.maps.LatLngBounds();
+
+      // Helper functions:
+      document.getElementById("zoomOut").onclick = zoomOut;
+
+      var makeIntoClickableElement = function(elId, marker){
+          // Setup basic click events:
+          var first =
+          document.getElementById(elId);
+          first.onclick = function(){
+              map.setZoom(15);
+              map.setCenter(marker.getPosition());
+          };
+      }
+
+
+      var makeMarkerCenterInit = function(marker){
+        google.maps.event.addListener(marker, 'click', function() {
+          map.setZoom(15);
+          map.setCenter(marker.getPosition());
+        });
+      };
+
+
+      var  plotIcon = function(icon, latBounds, lat, lon) {
+
+          var myLatLng2 = new google.maps.LatLng(lat, lon);
+          var beachMarker2 = new google.maps.Marker({
+              position: myLatLng2,
+              map: map,
+              icon: icon
+          });
+
+          latBounds.extend(myLatLng2);
+          makeMarkerCenterInit(beachMarker2);
+          return beachMarker2;
+
+      }
+      map.fitBounds(latBounds);
+
+      var zoomOut = function(){
+          map.fitBounds(latBounds);
+      };
+
+      var players = [];
+      players.push( {
+          imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/f90b166b-2fee-4577-87e0-f183c67b2a44.filename"
+          , name: "STEVE BLAKE"
+
+      };
+
+      players.push( {
+          imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/3c4b5023-cba6-49f9-9414-edc98a2eb027.filename"
+          , name: "Kobe Bryant"
+
+      };
+
+      players.push( {
+          imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/35d66118-4fc5-438d-b730-ab5e74aa31be.filename"
+          , name: "XAVIER HENRY"
+
+      };
+
+      /*
+      players.push( {
+          imgURL: ""
+          , name: "STEVE BLAKE"
+
+      }; */
+
+      // Actually plot some icons:
+
+      for (var ii = 0 ; ii < players.length; ii++) {
+          var player = players[ii];
+          var lat = Math.ceil( Math.random() * 140);
+          var lon = Math.ceil( Math.random() * 120);
+          plotIcon(player.imgURL , latBounds, lat, lon);
+      };
+
+
+      // makeIntoClickableElement("fourth", beachMarker4);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+
