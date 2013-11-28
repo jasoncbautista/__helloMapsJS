@@ -10,6 +10,9 @@
                                     mapOptions);
       var latBounds = new google.maps.LatLngBounds();
 
+      var zoomOut = function(){
+          map.fitBounds(latBounds);
+      };
       // Helper functions:
       document.getElementById("zoomOut").onclick = zoomOut;
 
@@ -48,10 +51,6 @@
       }
       map.fitBounds(latBounds);
 
-      var zoomOut = function(){
-          map.fitBounds(latBounds);
-      };
-
       var players = [];
       players.push( {
           imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/f90b166b-2fee-4577-87e0-f183c67b2a44.filename"
@@ -70,7 +69,7 @@
       players.push( {
           imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/35d66118-4fc5-438d-b730-ab5e74aa31be.filename"
           , name: "XAVIER HENRY"
-          , lat: 0
+          , lat: 40
           , lon: -90
       });
 
