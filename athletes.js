@@ -60,7 +60,7 @@
       });
 
       players.push( {
-          imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/3c4b5023-cba6-49f9-9414-edc98a2eb027.filename"
+          imgURL: "http://t1.gstatic.com/images?q=tbn:ANd9GcQlDi_Bzg4HvSw6R5s-lqGhzAxCuDx0WUA1NufkS0Czaf-WNX8bkQ"
           , name: "Kobe Bryant"
           , lat: 35
           , lon: -80
