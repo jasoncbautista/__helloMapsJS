@@ -14,40 +14,24 @@
         center: new google.maps.LatLng(35, 139),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
+
+      // Initializing map objects:
       var map = new google.maps.Map(document.getElementById('map-canvas'),
                                     mapOptions);
+      var latBounds = new google.maps.LatLngBounds();
 
-      var image = 'marker.png';
-      var myLatLng = new google.maps.LatLng( 37.774929, -122.419416);
-      var beachMarker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          icon: "chrome.png"
-      });
+      // Helper functions:
+      document.getElementById("zoomOut").onclick = zoomOut;
 
-
-
-
-
-      var myLatLng2 = new google.maps.LatLng(37.441883, -122.143019);
-      var beachMarker2 = new google.maps.Marker({
-          position: myLatLng2,
-          map: map,
-          icon: "iphone.png"
-      });
-
-      var myLatLng3 = new google.maps.LatLng(40.714353 , -74.005973);
-      var beachMarker3 = new google.maps.Marker({
-          position: myLatLng3,
-          map: map
-      });
-
-      var myLatLng4  = new google.maps.LatLng( 37.485215, -122.236355);
-      var beachMarker4 = new google.maps.Marker({
-          position: myLatLng4,
-          map: map
-      });
-
+      var makeIntoClickableElement = function(elId, marker){
+          // Setup basic click events:
+          var first =
+          document.getElementById(elId);
+          first.onclick = function(){
+              map.setZoom(15);
+              map.setCenter(marker.getPosition());
+          };
+      }
 
 
       var makeMarkerCenterInit = function(marker){
@@ -56,40 +40,35 @@
           map.setCenter(marker.getPosition());
         });
       };
-      makeMarkerCenterInit(beachMarker4);
-      makeMarkerCenterInit(beachMarker3);
-      makeMarkerCenterInit(beachMarker2);
-      makeMarkerCenterInit(beachMarker);
 
+      
+      var  plotIcon = function(icon, latBounds) {
 
-      var latBounds = new google.maps.LatLngBounds();
-      latBounds.extend(myLatLng);
-      latBounds.extend(myLatLng2);
-      //latBounds.extend(myLatLng3);
-      latBounds.extend(myLatLng4);
+          var myLatLng2 = new google.maps.LatLng(37.441883, -122.143019);
+          var beachMarker2 = new google.maps.Marker({
+              position: myLatLng2,
+              map: map,
+              icon: "iphone.png"
+          });
+
+          latBounds.extend(myLatLng2);
+          makeMarkerCenterInit(beachMarker2);
+          return beachMarker2;
+
+      }
       map.fitBounds(latBounds);
 
       var zoomOut = function(){
-        map.fitBounds(latBounds);
+          map.fitBounds(latBounds);
       };
 
 
-       document.getElementById("zoomOut").onclick = zoomOut;
+      // Actually plot some icons:
+      
+      plotIcon("iphone.png", latBounds);
 
-      var makeIntoClickableElement = function(elId, marker){
-        // Setup basic click events:
-        var first =
-        document.getElementById(elId);
-          first.onclick = function(){
-          map.setZoom(15);
-          map.setCenter(marker.getPosition());
-        };
-      }
 
-      makeIntoClickableElement("first", beachMarker);
-      makeIntoClickableElement("second", beachMarker2);
-      makeIntoClickableElement("third", beachMarker3);
-      makeIntoClickableElement("fourth", beachMarker4);
+      // makeIntoClickableElement("fourth", beachMarker4);
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
