@@ -56,20 +56,29 @@
       players.push( {
           imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/f90b166b-2fee-4577-87e0-f183c67b2a44.filename"
           , name: "STEVE BLAKE"
+          , lat: 36
+          , lon: -120
 
-      };
+      });
 
       players.push( {
           imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/3c4b5023-cba6-49f9-9414-edc98a2eb027.filename"
           , name: "Kobe Bryant"
+          , lat: 35
+          , lon: -80
 
-      };
+
+      });
 
       players.push( {
           imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/35d66118-4fc5-438d-b730-ab5e74aa31be.filename"
           , name: "XAVIER HENRY"
+          , lat: 40
+          , lon: -90
 
-      };
+
+
+      });
 
       /*
       players.push( {
@@ -82,9 +91,7 @@
 
       for (var ii = 0 ; ii < players.length; ii++) {
           var player = players[ii];
-          var lat = Math.ceil( Math.random() * 140);
-          var lon = Math.ceil( Math.random() * 120);
-          plotIcon(player.imgURL , latBounds, lat, lon);
+          plotIcon(player.imgURL , latBounds, player.lat, player.lon);
       };
 
 
