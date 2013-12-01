@@ -35,8 +35,11 @@
         });
       };
 
-      var addInteractiveLink = function(athleteName, marker) {
-          var el= $("<div> " + athleteName + "</div>");
+      var addInteractiveLink = function(player, marker) {
+          var el= $("<div> " + player.name+ "</div>");
+          var pastLocationEl =  $("<div>" + player.pastLocation + "</div>");
+          el.append(pastLocationEl);
+          pastLocationEl.hide();
 
           el.css("background", "white");
           el.click(function(){
@@ -49,6 +52,7 @@
               map.setZoom(6);
               map.setCenter(marker.getPosition());
               el.css("background", "green");
+              pastLocationEl.show();
           });
 
 
@@ -56,6 +60,7 @@
               // zoomOut();
 
               el.css("background", "white");
+              pastLocationEl.hide();
           });
 
           $(".leftBar").append(el);
@@ -74,7 +79,7 @@
           latBounds.extend(myLatLng2);
           makeMarkerCenterInit(beachMarker2);
 
-          addInteractiveLink(player.name , beachMarker2);
+          addInteractiveLink(player, beachMarker2);
           return beachMarker2;
       }
 
@@ -88,6 +93,8 @@
           , name: "Steve Blake"
           , lat: 39
           , lon: -76
+          , pastLocation: "Maryland/USA"
+
       });
 
       players.push( {
@@ -95,6 +102,7 @@
           , name: "Kobe Bryant"
           , lat: 35
           , lon: -80
+          , pastLocation: "Lower Merion HS (PA)/USA"
       });
 
       players.push( {
@@ -102,6 +110,7 @@
           , name: "Xavier Henry"
           , lat: 38.5
           , lon: -98
+          , pastLocation: "Kansas/USA"
       });
 
 
@@ -110,6 +119,7 @@
           , name: "Jordan Farmar"
           , lat: 34
           , lon: -118
+          , pastLocation:  "UCLA/USA"
       });
 
 
