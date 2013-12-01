@@ -122,6 +122,17 @@
           , pastLocation:  "UCLA/USA"
       });
 
+      players.push( {
+          imgURL: "https://pbs.twimg.com/profile_images/2788143344/1d7be5c88d4f5c730f27640e167e83ff_normal.jpeg"
+          , name: "Pau Gasol"
+          , lat: 41
+          , lon: 2.1
+          , pastLocation:  "FC Barcelona/Spain"
+      });
+
+
+
+
 
 
       // Actually plot some icons:
