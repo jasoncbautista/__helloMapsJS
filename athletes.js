@@ -47,16 +47,18 @@
           latBounds.extend(myLatLng2);
           makeMarkerCenterInit(beachMarker2);
           return beachMarker2;
-
       }
+
       map.fitBounds(latBounds);
 
+      // TODO: Place better markers:
+      // http://stackoverflow.com/questions/6811313/scaling-marker-size-with-marker-icons-from-a-sprite-in-google-maps-api-v3
       var players = [];
       players.push( {
-          imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/f90b166b-2fee-4577-87e0-f183c67b2a44.filename"
-          , name: "STEVE BLAKE"
-          , lat: 36
-          , lon: -120
+          imgURL: "http://cdn.bleacherreport.net/images_root/users/photos/002/107/585/stevey_b_crop_38x38.jpg?1362873493"
+          , name: "Steve Blake"
+          , lat: 39
+          , lon: -76
       });
 
       players.push( {
@@ -67,18 +69,12 @@
       });
 
       players.push( {
-          imgURL: "https://s3-us-west-2.amazonaws.com/sqor-images/profile_images/nba/35d66118-4fc5-438d-b730-ab5e74aa31be.filename"
-          , name: "XAVIER HENRY"
+          imgURL: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/s48x48/592040_672550942763875_1839854811_q.jpg"
+          , name: "Xavier Henry"
           , lat: 40
           , lon: -90
       });
 
-      /*
-      players.push( {
-          imgURL: ""
-          , name: "STEVE BLAKE"
-
-      }; */
 
       // Actually plot some icons:
 
