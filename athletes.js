@@ -36,11 +36,26 @@
 
       var addInteractiveLink = function(athleteName, marker) {
           var el= $("<div> " + athleteName + "</div>");
+
+          el.css("background", "white");
           el.click(function(){
               map.setZoom(15);
               map.setCenter(marker.getPosition());
           });
 
+
+          el.mouseover(function(){
+              map.setZoom(6);
+              map.setCenter(marker.getPosition());
+              el.css("background", "green");
+          });
+
+
+          el.mouseout(function(){
+              zoomOut();
+
+              el.css("background", "white");
+          });
 
           $(".leftBar").append(el);
 
