@@ -15,6 +15,7 @@
       };
       // Helper functions:
       document.getElementById("zoomOut").onclick = zoomOut;
+      document.getElementById("zoomOut").onmouseover= zoomOut;
 
       var makeIntoClickableElement = function(elId, marker){
           // Setup basic click events:
@@ -52,7 +53,7 @@
 
 
           el.mouseout(function(){
-              zoomOut();
+              // zoomOut();
 
               el.css("background", "white");
           });
@@ -102,6 +103,16 @@
           , lat: 38.5
           , lon: -98
       });
+
+
+      players.push( {
+          imgURL: "http://d1warraxuf7xh1.cloudfront.net/wp-content/uploads/2013/10/USATSI_7475553_154224518_lowres-150x150-64x64.jpg"
+          , name: "Jordan Farmar"
+          , lat: 34
+          , lon: -118
+      });
+
+
 
       // Actually plot some icons:
       for (var ii = 0 ; ii < players.length; ii++) {
