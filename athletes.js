@@ -36,8 +36,8 @@
       };
 
       var addInteractiveLink = function(player, marker) {
-          var el= $("<div> " + player.name+ "</div>");
-          var pastLocationEl =  $("<div>" + player.pastLocation + "</div>");
+          var el= $("<div class='playerCard'> " + player.name+ "</div>");
+          var pastLocationEl =  $("<div class='playerLocation'>" + player.pastLocation + "</div>");
           el.append(pastLocationEl);
           pastLocationEl.hide();
 
@@ -51,7 +51,7 @@
           el.mouseover(function(){
               map.setZoom(6);
               map.setCenter(marker.getPosition());
-              el.css("background", "green");
+              el.css("background", "#98FB98");
               pastLocationEl.show();
           });
 
@@ -131,6 +131,24 @@
       });
 
 
+
+      players.push( {
+          imgURL: "http://cdn.niketalk.com/b/b3/50x50px-ZC-b3e6f1bd_act_jordan_hill.jpeg"
+          , name: "Jordan Hill"
+          , lat: 34
+          , lon: -112
+          , pastLocation:  "Arizona/USA"
+      });
+
+
+
+      players.push( {
+          imgURL: "http://static.cdncast.com/resize/64/64/SportsBlogcom/filewarehouse/68793/7e16dd5c7d3253bfd56b875f4ee2f8b8.png"
+          , name: "Wesley Johnson"
+          , lat: 43
+          , lon: -76
+          , pastLocation:  "Syracuse/USA"
+      });
 
 
 
