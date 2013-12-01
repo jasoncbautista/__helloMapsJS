@@ -34,8 +34,19 @@
         });
       };
 
+      var addInteractiveLink = function(athleteName, marker) {
+          var el= $("<div> " + athleteName + "</div>");
+          el.click(function(){
+              map.setZoom(15);
+              map.setCenter(marker.getPosition());
+          });
 
-      var  plotIcon = function(icon, latBounds, lat, lon) {
+
+          $(".leftBar").append(el);
+
+      };
+
+      var  plotIcon = function(player, icon, latBounds, lat, lon) {
 
           var myLatLng2 = new google.maps.LatLng(lat, lon);
           var beachMarker2 = new google.maps.Marker({
@@ -46,6 +57,8 @@
 
           latBounds.extend(myLatLng2);
           makeMarkerCenterInit(beachMarker2);
+
+          addInteractiveLink(player.name , beachMarker2);
           return beachMarker2;
       }
 
@@ -71,16 +84,14 @@
       players.push( {
           imgURL: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/s48x48/592040_672550942763875_1839854811_q.jpg"
           , name: "Xavier Henry"
-          , lat: 40
-          , lon: -90
+          , lat: 38.5
+          , lon: -98
       });
 
-
       // Actually plot some icons:
-
       for (var ii = 0 ; ii < players.length; ii++) {
           var player = players[ii];
-          plotIcon(player.imgURL , latBounds, player.lat, player.lon);
+          plotIcon(player, player.imgURL , latBounds, player.lat, player.lon);
       };
 
 
