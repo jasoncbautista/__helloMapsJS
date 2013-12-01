@@ -151,6 +151,23 @@
       });
 
 
+      players.push( {
+          imgURL: "https://pbs.twimg.com/profile_images/378800000147458488/4ccd33bb73e33824b09b7627a225ca68_normal.jpeg"
+          , name: "Chris Kaman"
+          , lat: 43
+          , lon: -85
+          , pastLocation:  "Central Michigan/USA"
+      });
+
+
+      players.push( {
+          imgURL: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/s32x32/1075921_150555651802082_495204332_q.jpg"
+          , name: "Ryan Kelly"
+          , lat: 36
+          , lon: -78.9
+          , pastLocation:  "Duke/USA"
+      });
+
 
 
       // Actually plot some icons:
