@@ -188,6 +188,33 @@
       });
 
 
+      players.push( {
+          imgURL: "http://mat1.gtimg.com/sports/NBAImages/PlayerImages/sRobertSacre.png"
+          , name: "Robert Sacre"
+          , lat: 47.66
+          , lon: -117.40
+          , pastLocation:  "Gonzaga/USA"
+      });
+
+
+      players.push( {
+          imgURL: "http://s3.amazonaws.com/iknow_images/tiny_v1/3735779_tiny_v1_c8298195b2dabd03d6ddd5eaa4a6d5fd.jpeg"
+          , name: "Shawne Williams"
+          , lat: 35.11
+          , lon: -89.97
+          , pastLocation:  "Memphis/USA"
+      });
+
+
+
+      players.push( {
+          imgURL: "http://thepulse-radio.com/wp-content/uploads/2013/11/IFWT_Nick_young-40x40.jpg"
+          , name: "Nick Young"
+          , lat: 34.0
+          , lon: -118.28
+          , pastLocation:  "USC/USA"
+      });
+
 
       // Actually plot some icons:
       for (var ii = 0 ; ii < players.length; ii++) {
