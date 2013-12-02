@@ -98,7 +98,7 @@
       });
 
       players.push( {
-          imgURL: "http://t1.gstatic.com/images?q=tbn:ANd9GcQlDi_Bzg4HvSw6R5s-lqGhzAxCuDx0WUA1NufkS0Czaf-WNX8bkQ"
+          imgURL: "http://static9.therichestimages.com/cdn/40/40/70/c/wp-content/uploads/Kobe-Bryant-biography-e1369144423996.jpg"
           , name: "Kobe Bryant"
           , lat: 35
           , lon: -80
@@ -125,8 +125,8 @@
       players.push( {
           imgURL: "https://pbs.twimg.com/profile_images/2788143344/1d7be5c88d4f5c730f27640e167e83ff_normal.jpeg"
           , name: "Pau Gasol"
-          , lat: 41
-          , lon: 2.1
+          , lat: 41.3833
+          , lon: 2.1833
           , pastLocation:  "FC Barcelona/Spain"
       });
 
