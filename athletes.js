@@ -169,6 +169,25 @@
       });
 
 
+      players.push( {
+          imgURL: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/s48x48/276877_352696224808607_709304749_q.jpg"
+          , name: "Jodie Meeks"
+          , lat: 37
+          , lon: -85
+          , pastLocation:  "Kentucky/USA"
+      });
+
+
+
+      players.push( {
+          imgURL: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/s48x48/592167_325967627493317_142653662_q.jpg"
+          , name: "Steve Nash"
+          , lat: 45.24
+          , lon: -75.41
+          , pastLocation:  "Santa Clara/Canada"
+      });
+
+
 
       // Actually plot some icons:
       for (var ii = 0 ; ii < players.length; ii++) {
