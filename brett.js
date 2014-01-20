@@ -89,7 +89,7 @@
       // http://stackoverflow.com/questions/6811313/scaling-marker-size-with-marker-icons-from-a-sprite-in-google-maps-api-v3
       var players = [];
       players.push( {
-          imgURL: "http://cdn.bleacherreport.net/images_root/users/photos/002/107/585/stevey_b_crop_38x38.jpg?1362873493"
+          imgURL: "brett.jpg"
           , name: "Brett Favre"
           , lat: 30.4017
           , lon: -89.0761
