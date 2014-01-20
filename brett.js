@@ -51,7 +51,7 @@
           el.mouseover(function(){
               map.setZoom(6);
               map.setCenter(marker.getPosition());
-              el.css("background", "#98FB98");
+              el.css("background", "#50EBEC");
               pastLocationEl.show();
           });
 
