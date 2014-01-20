@@ -90,11 +90,10 @@
       var players = [];
       players.push( {
           imgURL: "http://cdn.bleacherreport.net/images_root/users/photos/002/107/585/stevey_b_crop_38x38.jpg?1362873493"
-          , name: "Steve Blake"
-          , lat: 39
-          , lon: -76
-          , pastLocation: "Maryland/USA"
-
+          , name: "Brett Favre"
+          , lat: 30.4017
+          , lon: -89.0761
+          , pastLocation: "Gulfport, Coordinates"
       });
 
 
