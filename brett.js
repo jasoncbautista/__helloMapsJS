@@ -97,14 +97,17 @@
 
       });
 
-      players.push( {
-          imgURL: "tweet.png"
-          , name: "Kobe Bryant"
-          , lat: 35
-          , lon: -80
-          , pastLocation: "Lower Merion HS (PA)/USA"
-      });
 
+      for(var ii = 0; ii < 50; ii++) {
+          var randLat = Math.random() * 40;
+          var randLon = Math.random() * 40;
+          players.push( {
+              imgURL: "tweet.png"
+          , name: "tweeterUser" + ii
+          , lat: randLat
+          , lon: randLon
+          });
+      }
 
       // Actually plot some icons:
       for (var ii = 0 ; ii < players.length; ii++) {
